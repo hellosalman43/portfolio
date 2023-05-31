@@ -1,1 +1,1 @@
-http://my.portfolio.pk/
+https://hellosalman43.github.io/portfolio/
