@@ -166,7 +166,7 @@ strong {
 
 
 .projects-thumb:hover .projects-tag{
-  background: var(--secondary-color);
+  background: #535da1;
   color: #fff;
   width: 100%;
   float: left;
