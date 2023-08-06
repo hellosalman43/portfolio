@@ -50,6 +50,55 @@ body {
 /*---------------------------------------
   TYPOGRAPHY               
 -----------------------------------------*/
+.ms-color{
+  color: var(--secondary-color);
+}
+
+.ms-hover-line:hover{
+  text-decoration: underline !important;
+}
+
+.ms-float-right{
+  float: right;
+}
+
+.ms-border-bottom{
+  border-bottom: 2px solid;
+padding-bottom: 5px;
+}
+
+.ms-ref{
+  width: 10%;
+  float: left;
+}
+
+.projects-thumb .footer-menu-link1{
+  border: none !important;
+}
+
+.projects-thumb:hover .footer-menu-link{
+  background: var(--secondary-color);
+  border-color: transparent;
+  width: 100%;
+  float: left;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.projects-thumb:hover .projects-tag{
+  color: #fff !important;
+}
+
+input[type="checkbox"],
+.form-check-label{
+  cursor: pointer;
+}
+
+.project-list a{
+  text-transform: uppercase;
+}
 
 h2,
 h3,
@@ -164,17 +213,6 @@ strong {
   padding: 10px 30px;
 }
 
-
-.projects-thumb:hover .projects-tag{
-  background: #535da1;
-  color: #fff;
-  width: 100%;
-  float: left;
-  padding: 12px;
-  font-size: 15px;
-  border-radius: 20px;
-  text-align: center;
-}
 
 /*---------------------------------------
   AVATAR IMAGE               
@@ -698,6 +736,12 @@ strong {
 .services-thumb:hover {
   border: 2px solid var(--secondary-color);
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+}
+
+.services-thumb:hover .custom-border-btn{
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--white-color);
 }
 
 .services-thumb:hover .services-icon-wrap {
@@ -1324,4 +1368,8 @@ strong {
     font-weight: 900;
 font-size: 18px;
   }
+}
+
+#thankYouMessage{
+  color: #14B789;
 }
