@@ -658,10 +658,10 @@ strong {
   border-radius: var(--border-radius-medium);
 }
 
-.about-thumb {
+/* .about-thumb {
   padding-right: 20px;
   padding-left: 20px;
-}
+} */
 
 
 /*---------------------------------------
@@ -1370,6 +1370,30 @@ font-size: 18px;
   }
 }
 
+
+.ms-text-color,
 #thankYouMessage{
   color: #14B789;
+}
+
+.ms-underline{
+  text-decoration: underline;
+}
+
+@media only screen and (min-width:200px) and (max-width: 480px){
+  .ms-ref{
+    width: 25% !important;
+  }
+
+  .msname{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width:479px) and (max-width: 767px){
+  .ms-ref{
+    width: 20% !important;
+  }
+
+  
 }
