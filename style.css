@@ -1167,11 +1167,6 @@ strong {
     padding-bottom: 10px;
   }
 
-  .hero {
-    padding-top: 200px;
-    padding-bottom: 400px;
-  }
-
   .hero-text {
     top: 0;
     margin-bottom: 120px;
@@ -1380,6 +1375,11 @@ font-size: 18px;
   text-decoration: underline;
 }
 
+.msmt-5,
+.msmb-5{
+  margin-top: 3rem;
+}
+
 @media only screen and (min-width:200px) and (max-width: 480px){
   .ms-ref{
     width: 25% !important;
@@ -1388,12 +1388,62 @@ font-size: 18px;
   .msname{
     font-size: 14px;
   }
+
+  .msmt-5,
+  .msmb-5{
+    margin-top: 1rem;
+  }
+
+  .msfitmbl{
+    flex: content;
+  }
+
+  .hero {
+    padding-top: 200px;
+    padding-bottom: 480px;
+  }
+
+  .msvide0{
+    margin-top: 30px;
+  }
+
 }
 
 @media only screen and (min-width:479px) and (max-width: 767px){
   .ms-ref{
     width: 20% !important;
   }
+  .msmt-5{
+    margin-top: 1rem;
+  }
 
+  .msfitmbl{
+    flex: content;
+  }
+
+  .hero {
+    padding-top: 200px;
+    padding-bottom: 550px;
+  }
+
+  .msvide0{
+    margin-top: 30px;
+  }
+  
+}
+
+@media only screen and (min-width:768px) and (max-width: 1024px){
+  .msfitmbl{
+    flex: content;
+  }
+
+  .hero {
+    padding-top: 200px;
+    padding-bottom: 700px;
+  }
+
+  .msvide0{
+    margin-top: 30px;
+  }
   
 }
