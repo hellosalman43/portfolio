@@ -448,7 +448,7 @@ https://templatemo.com/tm-578-first-portfolio
                             <strong class="site-footer-title d-block mt-4 mb-3">Stay connected</strong>
                             <ul class="social-icon">
                                 <li class="social-icon-item"> <a class="social-icon-link"
-                                        href="https://www.linkedin.com/in/muhammad-sulaiman-769203222"
+                                        href="www.linkedin.com/in/mrsalman723"
                                         target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
                                 <li class="social-icon-item"><a class="social-icon-link"
                                         href="https://join.skype.com/invite/w32HiWCpYdsg" target="_blank"><i
