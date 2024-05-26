@@ -1,2 +1,5 @@
 <?php
-echo mail('mrsalman723s@gmail.com', 'salo', 'sa');
+
+mail("mrsalman723s@gmail.com","My subject","op");
+
+?>
