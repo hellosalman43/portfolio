@@ -463,19 +463,17 @@ https://templatemo.com/tm-578-first-portfolio
                         </div>
                     </div>
                     <div class="col-lg-6 col-12 mt-5 mt-lg-0">
-                        <form action="#" method="get" class="custom-form contact-form" role="form">
+                        <form id="custom-form" method="post" class="custom-form contact-form" role="form">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <div class="form-floating">
-                                        <input type="text" name="name" id="name" class="form-control msfeild"
-                                            placeholder="Name" required="">
+                                        <input type="text" name="name" id="name" class="form-control msfeild" placeholder="Name" required="">
                                         <label for="floatingInput">Name</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <div class="form-floating">
-                                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*"
-                                            class="form-control msfeild" placeholder="Email address" required="">
+                                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control msfeild" placeholder="Email address" required="">
                                         <label for="floatingInput">Email address</label>
                                     </div>
                                 </div>
@@ -486,7 +484,7 @@ https://templatemo.com/tm-578-first-portfolio
                                             <i class="fab fa-html5 form-check-icon"></i>
                                             <span class="form-check-label-text">HTML</span>
                                         </label>
-                                  </div>
+                                    </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6 col-6">
                                     <div class="form-check form-check-inline">
@@ -508,25 +506,23 @@ https://templatemo.com/tm-578-first-portfolio
                                 </div>
                                 <div class="col-lg-3 col-md-6 col-6">
                                     <div class="form-check form-check-inline me-0">
-                                        <input name="woocommerce" type="checkbox" class="form-check-input"
-                                            id="woocommerce" value="woocommerce">
-                                            <label class="form-check-label" for="woocommerce">
-                                                <i class="fa-sharp fab fa-laravel form-check-icon"></i>
-                                                <span class="form-check-label-text">Laravel</span>
-                                            </label>
+                                        <input name="woocommerce" type="checkbox" class="form-check-input" id="woocommerce" value="woocommerce">
+                                        <label class="form-check-label" for="woocommerce">
+                                            <i class="fa-sharp fab fa-laravel form-check-icon"></i>
+                                            <span class="form-check-label-text">Laravel</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control msfeild" id="message" name="message"
-                                            placeholder="Tell me about the project"></textarea>
+                                        <textarea class="form-control msfeild" id="message" name="message" placeholder="Tell me about the project"></textarea>
                                         <label for="floatingTextarea">Tell me about the project</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-12 ms-auto">
                                     <button type="button" id="submit" class="form-control">Send</button>
                                 </div>
-                                <p id="thankYouMessage">Thank you for your submission!</p>
+                                <p id="thankYouMessage" style="display:none;">Thank you for your submission!</p>
                             </div>
                         </form>
                     </div>
@@ -559,23 +555,35 @@ https://templatemo.com/tm-578-first-portfolio
         <script src="magnific-popup-options.js"></script>
         <script src="custom.js"></script>
     <script>
-        $('#thankYouMessage').hide();
-        $(document).ready(function () {
-            $(document).on('click', '#submit', function () {
-                var name = $('#name').val();
-                var email = $('#email').val();
-                var message = $('#message').val();
-                $('.feilds').remove();
-                $('#name,#email,#message').on('click', function () {
-                    $('.feilds').hide();
-                });
-                if (name !== '' && email != '' && message != '') {
+         $(document).ready(function () {
+    $('#thankYouMessage').hide();
+
+    $('#submit').on('click', function () {
+        $('.feilds').remove();
+        $('#name, #email, #message').on('click', function () {
+            $('.feilds').hide();
+        });
+
+        if ($('#name').val() !== '' && $('#email').val() !== '' && $('#message').val() !== '') {
+            var formData = $('#custom-form').serialize();
+
+            $.ajax({
+                url: 'mail.php',
+                method: 'POST',
+                data: formData,
+                success: function(response) {
                     $('#thankYouMessage').show();
-                } else {
-                    $('#thankYouMessage').after('<div class="feilds text-danger">All feild is required</div>');
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert('Request failed: ' + textStatus, errorThrown);
+                    alert('Response text: ' + jqXHR.responseText);
                 }
             });
-        });
+        } else {
+            $('#thankYouMessage').after('<div class="feilds text-danger">All fields are required</div>');
+        }
+    });
+});
     </script>
 </body>
 </html>
