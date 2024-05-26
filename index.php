@@ -463,7 +463,7 @@ https://templatemo.com/tm-578-first-portfolio
                         </div>
                     </div>
                     <div class="col-lg-6 col-12 mt-5 mt-lg-0">
-                        <form id="custom-form" method="post" class="custom-form contact-form" role="form">
+                        <form id="custom-form" method="" class="custom-form contact-form" role="form">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <div class="form-floating">
@@ -569,7 +569,7 @@ https://templatemo.com/tm-578-first-portfolio
 
             $.ajax({
                 url: 'mail.php',
-                method: 'POST',
+                method: 'GET',
                 data: formData,
                 success: function(response) {
                     $('#thankYouMessage').show();
